@@ -1,3 +1,15 @@
+using Random
+using Plots
+using CSV
+using DataFrames
+using MLJ
+using MLJLIBSVMInterface
+using CategoricalArrays
+using ROC
+import LIBSVM
+import Statistics
+using PrettyPrinting
+
 function plot_svc(model, x, y, count,h=0.02, pad=0.25)
     x_min = minimum(x[:, 1]) - pad
     x_max = maximum(x[:, 1]) + pad
